@@ -5,7 +5,7 @@
     <!--<script type="text/javascript" src="lib/vis/dist/vis.js"></script>-->
     <script type="text/javascript" src="dist/vis-custom.js"></script>
     <meta charset="UTF-8">
-    <link href="lib/vis/dist/vis.css" rel="stylesheet" type="text/css"/>
+    <link href="dist/vis.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="css/style.css">
   <template id="bodyContent">
     <!-- Main container, with loading bar -->
@@ -118,7 +118,7 @@
       <p>Vizualization tool</p>
       <a href="#" class="button" id="loadFile">Open file...</a>
     </div>
-    
+
   <script type="text/javascript" src="js/config.js"></script>
   <script type="text/javascript" src="js/tagList.js"></script>
   <script type="text/javascript" src="js/contextMenu.js"></script>
@@ -131,7 +131,7 @@
 
     var Vizu = Vizu || {};
     var graph = new Vizu.Graph('mynetwork', Vizu.options);
-    
+
     Vizu.triggerLoad = function(e) {
       e.preventDefault();
       var input = document.createElement('input');
@@ -156,7 +156,7 @@
       }
     });
 
-    
+
   </script>
 </body>
 </html>
