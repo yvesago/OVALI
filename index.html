@@ -81,6 +81,8 @@
       <div id="searchResults"></div>
     </div>
 
+    <div id="cb" style="position: absolute; left: -2000px"></div>
+
     <ul class="context-menu" id="contextMenu">
       <li class="disabled context-item" data-min-node-or-edge="1" id="delLink">Remove selection</li>
       <li class="disabled context-item" data-min-selection="1" id="fixLink">Fix/unfix selection</li>
@@ -106,6 +108,7 @@
       </li>
       <li class="disabled context-item" data-min-selection="1" data-max-selection="1" id="pathLink">Shortest path to root</li>
       <li class="disabled context-item" data-min-selection="1" data-max-selection="1" id="selectSameLink">Select same type nodes</li>
+      <li class="disabled context-item" data-min-node-or-edge="1" id="copyToClipboard">Copy selection to clipboard</li>
     </ul>
 
   </template>
