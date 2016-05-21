@@ -246,9 +246,8 @@ ul.context-menu li.disabled, ul.context-menu li.disabled:hover {
 
 #statusContainer {
     display: inline-block;
-    overflow: hidden;
+    overflow: auto;
     word-wrap: break-word;
-    text-overflow: ellipsis;
     max-width: 100%;
     white-space: nowrap;
 }
