@@ -29,6 +29,46 @@ Vizu.ContextMenu = function (container, graph) {
   };
 
   /**
+   * Copy selection to clipboard
+   */
+  var clipboardListener = function () {
+    var selectedNodes = graph.network.getSelectedNodes(),
+      selectedEdges = graph.network.getSelectedEdges(),
+      nodes = graph.network.body.data.nodes["_data"],
+      edges = graph.network.body.data.edges["_data"];
+    var output = "Nodes:\n";
+    for (var i = 0; i < selectedNodes.length; i++) {
+      output = output.concat(nodes[selectedNodes[i]]["title"],"\n");
+    }
+    output = output.concat("\nRelationships:\n");
+    for (var j = 0; j < selectedEdges.length; j++) {
+      var edge = edges[selectedEdges[j]];
+      var from = nodes[edge["from"]]["title"];
+      var to = nodes[edge["to"]]["title"];
+      var title = edge["title"];
+      output = output.concat("(", from, ")-[", title, "]-(", to, ")\n");
+    }
+
+    cText = output.replace(/\n\r?/g, "<br>");
+
+    var editableDiv = document.getElementById("cb");
+
+    with (editableDiv) {
+        contentEditable = true;
+    }
+    editableDiv.innerHTML = cText;
+
+    // select the editable content and copy it to the clipboard
+    var range = document.createRange();
+    var selection = window.getSelection();
+    range.selectNodeContents(editableDiv);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand("Copy");
+    selection.removeAllRanges();
+  };
+
+  /**
    * Delete selection (nodes & edges)
    */
   var delListener = function () {
@@ -357,6 +397,9 @@ Vizu.ContextMenu = function (container, graph) {
     var link = links[i];
     if (!link.classList.contains('context-item-submenu')) {
       link.addEventListener('click', linkListener.bind(this), false);
+    }
+    if (link.id === 'copyToClipboard') {
+      link.addEventListener('click', clipboardListener.bind(this), false);
     }
     if (link.id === 'delLink') {
       link.addEventListener('click', delListener.bind(this), false);
