@@ -28,7 +28,7 @@ Vizu.Graph.prototype = (function () {
         group = getGroup(n, this.options),
         node;
       if (0 === n.dist) {
-        this.rootId = this.options.data.properties.id ? n[this.options.data.properties.id] : i,
+        this.rootId = this.options.data.properties.id ? n[this.options.data.properties.id] : i
       }
       node = {
         // we use the count of the loop as an id if the id property setting is false
