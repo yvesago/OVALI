@@ -3,6 +3,7 @@ var Vizu = Vizu || {};
 Vizu.colors = {
   "default": {background: "#CCCCCC", border: "#212121", highlight: {background: "#CCCCCC", border: "#212121"}},
   user: {background: "#80b2ff", border: "#0047b2", highlight: {background: "#80b2ff", border: "#0047b2"}},
+  inetorgperson: {background: "#80b2ff", border: "#0047b2", highlight: {background: "#80b2ff", border: "#0047b2"}},
   foreignsecurityprincipal: {background: "#ffa366", border: "#8f3900", highlight: {background: "#ffa366", border: "#8f3900"}},
   computer: {background: "#d65c33", border: "#661a00", highlight: {background: "#d65c33", border: "#661a00"}},
   group: {background: "#70db70", border: "#196419", highlight: {background: "#70db70", border: "#196419"}},
@@ -16,6 +17,7 @@ Vizu.colors = {
   // unselected colors
   udefault: {background: "#E4E4E4", border: "#B1B1B1", highlight: {background: "#CCCCCC", border: "#212121"}},
   uuser: {background: "#cddcf3", border: "#a7bcdc", highlight: {background: "#80b2ff", border: "#0047b2"}},
+  uinetorgperson: {background: "#cddcf3", border: "#a7bcdc", highlight: {background: "#80b2ff", border: "#0047b2"}},
   uforeignsecurityprincipal: {background: "#f3d8c6", border: "#d2b8a7", highlight: {background: "#ffa366", border: "#8f3900"}},
   ucomputer: {background: "#e7c3b6", border: "#c6afa7", highlight: {background: "#d65c33", border: "#661a00"}},
   ugroup: {background: "#c9e9c9", border: "#afc5af", highlight: {background: "#70db70", border: "#196419"}},
@@ -53,6 +55,7 @@ Vizu.options.network = {
   groups: {
     "default": {label: "-", color: Vizu.colors['default']},
     user: {label: "u", color: Vizu.colors.user},
+    inetorgperson: {label: "u", color: Vizu.colors.inetorgperson},
     foreignsecurityprincipal: {label: "w", color: Vizu.colors.foreignsecurityprincipal},
     computer: {label: "m", color: Vizu.colors.computer},
     group: {label: "g", color: Vizu.colors.group},
