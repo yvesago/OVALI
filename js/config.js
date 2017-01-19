@@ -14,6 +14,7 @@ Vizu.colors = {
   subnet: {background: "#d7e798", border: "#b3c397", highlight: {background: "#d7e798", border: "#b3c397"}},
   domaincontroller: {background: "#ee7a51", border: "#d53700", highlight: {background: "#ee7a51", border: "#d53700"}},
   rodomaincontroller: {background: "#33673b", border: "#19231a", highlight: {background: "#33673b", border: "#19231a"}},
+  ntsecdesc: {background: "#824c71", border: "#70163c", highlight: {background: "#824c71", border: "#70163c"}},
   // unselected colors
   udefault: {background: "#E4E4E4", border: "#B1B1B1", highlight: {background: "#CCCCCC", border: "#212121"}},
   uuser: {background: "#cddcf3", border: "#a7bcdc", highlight: {background: "#80b2ff", border: "#0047b2"}},
@@ -27,14 +28,15 @@ Vizu.colors = {
   usite: {background: "#cebec9", border: "#c9aeb9", highlight: {background: "#824c71", border: "#70163c"}},
   usubnet: {background: "#e7ecd5", border: "#dde1d4", highlight: {background: "#d7e798", border: "#b3c397"}},
   udomaincontroller: {background: "#eeccbf", border: "#e7b8a7", highlight: {background: "#ee7a51", border: "#d53700"}},
-  urodomaincontroller: {background: "#b6c6b9", border: "#afb2af", highlight: {background: "#33673b", border: "#19231a"}}
+  urodomaincontroller: {background: "#b6c6b9", border: "#afb2af", highlight: {background: "#33673b", border: "#19231a"}},
+  untsecdesc: {background: "#cebec9", border: "#c9aeb9", highlight: {background: "#824c71", border: "#70163c"}}
 };
 
 Vizu.options = {
   data: {
     properties: {
       nodes: {
-        id: false,
+        id: "nid",
         group: 'type',
         title: 'name',
         short: 'shortname',
@@ -63,6 +65,7 @@ Vizu.options.network = {
     grouppolicycontainer: {label: "x", color: Vizu.colors.grouppolicycontainer},
     unknown: {label: "?", color: Vizu.colors.unknown},
     site: {label: "s", color: Vizu.colors.site},
+    ntsecdesc: {label: "S", color: Vizu.colors.ntsecdesc},
     subnet: {label: "n", color: Vizu.colors.subnet},
     domaincontroller: {label: "d", color: Vizu.colors.domaincontroller},
     rodomaincontroller: {label: "r", color: Vizu.colors.rodomaincontroller}
@@ -99,7 +102,7 @@ Vizu.options.network = {
     scaling: {
       label: {
         min: 15,
-        max: 25
+        max: 30
       }
     }
   },

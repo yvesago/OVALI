@@ -29,19 +29,22 @@ Vizu.Graph.prototype = (function () {
         node;
       if (0 === n.dist) {
         this.rootId = this.options.data.properties.id ? n[this.options.data.properties.id] : i
+        //this.rootId = n[this.options.data.properties.id]
       }
       node = {
         // we use the count of the loop as an id if the id property setting is false
         // this is in case the edges properties "from" and "to" are referencing
         // the order of the node, not the real id.
-        id: this.options.data.properties.id ? n[this.options.data.properties.id] : i,
+        //YYY id: this.options.data.properties.id ? n[this.options.data.properties.id] : i,
+        id: n["id"],
         group: group,
         baseGroup: group,
         title: n[this.options.data.properties.nodes.title],
         shortName: n[this.options.data.properties.nodes.short],
         level: n[this.options.data.properties.nodes.level],
         tags: new Vizu.TagList(),
-        value: 0 === n.dist ? 10 : 1
+        //YYY value: 0 === n.dist ? 10 : 1
+        value: n[this.options.data.properties.nodes.level] <2 ? 1 : n[this.options.data.properties.nodes.level] > 15 ? 10 : 7
       };
       if (this.options.data.properties.nodes.label) {
         node['label'] = n[this.options.data.properties.nodes.label];
